@@ -10,11 +10,15 @@ const priceData = {
 
 let updatedPriceData = {};
 
-for (let [keys, values] of Object.entries(priceData)) {
-  let items = keys.toLowerCase();
-  let prices = Number(values);
-  let roundedPrices = prices.toFixed(2);
-  updatedPriceData[items] = roundedPrices;
+for (let [key, value] of Object.entries(priceData)) {
+  let item = key.toLowerCase();
+  let price = Number(value).toFixed(2);
+  updatedPriceData[item] = price;
 }
 
+// for (let key in priceData) {
+//   let item = key.toLowerCase();
+//   let price = Number(priceData[key]).toFixed(2)
+//   updatedPriceData[item] = price;
+// }
 console.log(updatedPriceData);
